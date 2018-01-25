@@ -1,3 +1,4 @@
+# coding=utf-8
 # Python中Unicode字符串
 
 # 字符串还有一个编码问题。

@@ -1,3 +1,4 @@
+# coding=utf-8
 # Python之print语句
 
 # print语句可以向屏幕上输出指定的文字。比如输出'hello, world'，用代码实现如下：
@@ -16,6 +17,6 @@
 # >>> print 100 + 200
 # 300    #运行结果
 
-#input code
+# input code
 print 'hello, python'
 print 'hello,', 'python'

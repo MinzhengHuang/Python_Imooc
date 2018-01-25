@@ -1,3 +1,4 @@
+# coding=utf-8
 # Python中布尔类型
 
 # 我们已经了解了Python支持布尔类型的数据，布尔类型只有True和False两种值，但是布尔类型有以下几种运算：

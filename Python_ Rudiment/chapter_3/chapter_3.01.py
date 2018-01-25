@@ -1,3 +1,4 @@
+# coding=utf-8
 # Python中数据类型
 
 # 一、整数
