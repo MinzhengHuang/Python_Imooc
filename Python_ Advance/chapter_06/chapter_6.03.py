@@ -29,12 +29,12 @@ class Student(object):
 # 如果 s 应该排在前面，就返回1，如果两者相当，返回 0。
 
 # Student类实现了按name进行排序：
-# >>> L = [Student('Tim', 99), Student('Bob', 88), Student('Alice', 77)]
-# >>> print sorted(L)
+L = [Student('Tim', 99), Student('Bob', 88), Student('Alice', 77)]
+print sorted(L)
 # [(Alice: 77), (Bob: 88), (Tim: 99)]
 
 # 注意: 如果list不仅仅包含 Student 类，则 __cmp__ 可能会报错：
-# L = [Student('Tim', 99), Student('Bob', 88), 100, 'Hello']
+L = [Student('Tim', 99), Student('Bob', 88), 100, 'Hello']
 # print sorted(L)
 
 

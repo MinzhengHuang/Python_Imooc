@@ -5,21 +5,21 @@
 
 # 修改类属性会导致所有实例访问到的类属性全部都受影响，但是，如果在实例变量上修改类属性会发生什么问题呢？
 
-# class Person(object):
-#     address = 'Earth'
-#     def __init__(self, name):
-#         self.name = name
-#
-# p1 = Person('Bob')
-# p2 = Person('Alice')
-#
-# print 'Person.address = ' + Person.address
-#
-# p1.address = 'China'
-# print 'p1.address = ' + p1.address
-#
-# print 'Person.address = ' + Person.address
-# print 'p2.address = ' + p2.address
+class Person(object):
+    address = 'Earth'
+
+    def __init__(self, name):
+        self.name = name
+
+
+p1 = Person('Bob')
+p2 = Person('Alice')
+
+print 'Person.address = ' + Person.address
+p1.address = 'China'
+print 'p1.address = ' + p1.address
+print 'Person.address = ' + Person.address
+print 'p2.address = ' + p2.address
 
 # 结果如下：
 # Person.address = Earth
@@ -40,8 +40,10 @@
 # 可见，当实例属性和类属性重名时，实例属性优先级高，它将屏蔽掉对类属性的访问。
 
 # 当我们把 p1 的 address 实例属性删除后，访问 p1.address 就又返回类属性的值 'Earth'了：
-# del p1.address
-# print p1.address
+del p1.address
+print p1.address
+
+
 # # => Earth
 
 # 可见，千万不要在实例上修改类属性，它实际上并没有修改类属性，而是给实例绑定了一个实例属性。
@@ -50,7 +52,6 @@
 # 任务
 # 请把上节的 Person 类属性 count 改为 __count，再试试能否从实例和类访问该属性。
 class Person(object):
-
     __count = 0
 
     def __init__(self, name):
@@ -58,10 +59,11 @@ class Person(object):
         Person.__count += 1
         print Person.__count
 
+
 p1 = Person('Bob')
 p2 = Person('Alice')
 
 try:
     print Person.__count
 except AttributeError:
-    print 'attributeerror'
+    print 'attributeError'

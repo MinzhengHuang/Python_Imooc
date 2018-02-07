@@ -11,12 +11,12 @@ class Student(object):
 
 
 # 当我们想要修改一个 Student 的 scroe 属性时，可以这么写：
-# s = Student('Bob', 59)
-# s.score = 60
+s = Student('Bob', 59)
+s.score = 60
 
 
 # 但是也可以这么写：
-# s.score = 1000
+s.score = 1000
 
 
 # 显然，直接给属性赋值无法检查分数的有效性。

@@ -17,9 +17,11 @@ class Student(object):
 
 
 # 现在，对实例进行操作：
-# >>> s = Student('Bob', 'male', 59)
-# >>> s.name = 'Tim' # OK
-# >>> s.score = 99 # OK
+s = Student('Bob', 'male', 59)
+s.name = 'Tim'  # OK
+s.score = 99  # OK
+
+
 # >>> s.grade = 'A'
 # Traceback (most recent call last):
 #   ...

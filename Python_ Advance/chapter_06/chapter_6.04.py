@@ -17,8 +17,8 @@ class Students(object):
 
 
 # 只要正确实现了__len__()方法，就可以用len()函数返回Students实例的“长度”：
-# >>> ss = Students('Bob', 'Alice', 'Tim')
-# >>> print len(ss)
+ss = Students('Bob', 'Alice', 'Tim')
+print len(ss)
 # 3
 
 

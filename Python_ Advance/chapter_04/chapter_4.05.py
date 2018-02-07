@@ -5,15 +5,21 @@
 # 我们可以给一个实例绑定很多属性，如果有些属性不希望被外部访问到怎么办？
 
 # Python对属性权限的控制是通过属性名来实现的，如果一个属性由双下划线开头(__)，该属性就无法被外部访问。看例子：
-# class Person(object):
-#     def __init__(self, name):
-#         self.name = name
-#         self._title = 'Mr'
-#         self.__job = 'Student'
-# p = Person('Bob')
-# print p.name
+class Person(object):
+    def __init__(self, name):
+        self.name = name
+        self._title = 'Mr'
+        self.__job = 'Student'
+
+    @property
+    def title(self):
+        return self._title
+
+
+p = Person('Bob')
+print p.name
 # # => Bob
-# print p._title
+print p.title
 # # => Mr
 # print p.__job
 # # => Error

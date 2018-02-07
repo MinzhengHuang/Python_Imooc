@@ -1,14 +1,16 @@
 # coding=utf-8
+
+
 # python中编写带参数decorator
 
 
 # 考察上一节的 @log 装饰器：
-# def log(f):
-#     def fn(x):
-#         print 'call ' + f.__name__ + '()...'
-#         return f(x)
-#
-#     return fn
+def log(f):
+    def fn(x):
+        print 'call ' + f.__name__ + '()...'
+        return f(x)
+
+    return fn
 
 
 # 发现对于被装饰的函数，log打印的语句是不能变的（除了函数名）。
@@ -29,27 +31,27 @@
 
 # 上面的语句又相当于：
 # log_decorator = log('DEBUG')
-
+#
 # @log_decorator
 # def my_func():
 #     pass
 
 # 所以，带参数的log函数首先返回一个decorator函数，再让这个decorator函数接收my_func并返回新函数：
-# def log(prefix):
-#     def log_decorator(f):
-#         def wrapper(*args, **kw):
-#             print '[%s] %s()...' % (prefix, f.__name__)
-#             return f(*args, **kw)
-#
-#         return wrapper
-#
-#     return log_decorator
-#
-# @log('DEBUG')
-# def test():
-#     pass
-#
-# print test()
+def log(prefix):
+    def log_decorator(f):
+        def wrapper(*args, **kw):
+            print '[%s] %s()...' % (prefix, f.__name__)
+            return f(*args, **kw)
+
+        return wrapper
+
+    return log_decorator
+
+@log('DEBUG')
+def test():
+    pass
+
+print test()
 
 # 执行结果：
 # [DEBUG] test()...
@@ -72,12 +74,13 @@
 # 拆开以后会发现，调用会失败，因为在3层嵌套的decorator定义中，最内层的wrapper引用了最外层的参数prefix，
 # 所以，把一个闭包拆成普通的函数调用会比较困难。不支持闭包的编程语言要实现同样的功能就需要更多的代码。
 
+
+
 # 任务
 # 上一节的@performance只能打印秒，请给 @performace 增加一个参数，允许传入's'或'ms'：
 # @performance('ms')
 # def factorial(n):
 #     return reduce(lambda x,y: x*y, range(1, n+1))
-
 import time
 
 

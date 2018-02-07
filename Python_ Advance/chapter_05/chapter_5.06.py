@@ -20,19 +20,20 @@ class Student(Person):
     def whoAmI(self):
         return 'I am a Student, my name is %s' % self.name
 
+
 # 首先可以用 type() 函数获取变量的类型，它返回一个 Type 对象：
-# >>> type(123)
+print type(123)
 # <type 'int'>
-# >>> s = Student('Bob', 'Male', 88)
-# >>> type(s)
+s = Student('Bob', 'Male', 88)
+print type(s)
 # <class '__main__.Student'>
 
 # 其次，可以用 dir() 函数获取变量的所有属性：
 
-# >>> dir(123)   # 整数也有很多属性...
+print dir(123)  # 整数也有很多属性...
 # ['__abs__', '__add__', '__and__', '__class__', '__cmp__', ...]
 
-# >>> dir(s)
+print dir(s)
 # ['__class__', '__delattr__', '__dict__', '__doc__', '__format__', '__getattribute__', '__hash__', '__init__',
 #  '__module__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__',
 #  '__subclasshook__', '__weakref__', 'gender', 'name', 'score', 'whoAmI']
@@ -43,20 +44,22 @@ class Student(Person):
 
 # dir()返回的属性是字符串列表，如果已知一个属性名称，要获取或者设置对象的属性，就需要用 getattr() 和 setattr( )函数了：
 
-# >>> getattr(s, 'name')  # 获取name属性
+print getattr(s, 'name')  # 获取name属性
 # 'Bob'
-#
-# >>> setattr(s, 'name', 'Adam')  # 设置新的name属性
-#
-# >>> s.name
+
+print setattr(s, 'name', 'Adam')  # 设置新的name属性
+
+print s.name
 # 'Adam'
-#
-# >>> getattr(s, 'age')  # 获取age属性，但是属性不存在，报错：
+
+# print getattr(s, 'age')  # 获取age属性，但是属性不存在，报错：
 # Traceback (most recent call last):
 #   File "<stdin>", line 1, in <module>
 # AttributeError: 'Student' object has no attribute 'age'
 #
-# >>> getattr(s, 'age', 20)  # 获取age属性，如果属性不存在，就返回默认值20：
+print getattr(s, 'age', 20)  # 获取age属性，如果属性不存在，就返回默认值20：
+
+
 # 20
 
 
@@ -76,6 +79,7 @@ class Person(object):
         self.gender = gender
         for k, v in kw.iteritems():
             setattr(self, k, v)
+
 
 p = Person('Bob', 'Male', age=18, course='Python')
 print p.age

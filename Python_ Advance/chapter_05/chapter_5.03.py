@@ -31,21 +31,21 @@ t = Teacher('Alice', 'Female', 'English')
 
 
 # 当我们拿到变量 p、s、t 时，可以使用 isinstance 判断类型：
-# >>> isinstance(p, Person)
+print isinstance(p, Person)
 # True    # p是Person类型
-# >>> isinstance(p, Student)
+print isinstance(p, Student)
 # False   # p不是Student类型
-# >>> isinstance(p, Teacher)
+print isinstance(p, Teacher)
 # False   # p不是Teacher类型
 
 # 这说明在继承链上，一个父类的实例不能是子类类型，因为子类比父类多了一些属性和方法。
 
 # 我们再考察 s ：
-# >>> isinstance(s, Person)
+print isinstance(s, Person)
 # True    # s是Person类型
-# >>> isinstance(s, Student)
+print isinstance(s, Student)
 # True    # s是Student类型
-# >>> isinstance(s, Teacher)
+print isinstance(s, Teacher)
 # False   # s不是Teacher类型
 
 # s 是Student类型，不是Teacher类型，这很容易理解。但是，s 也是Person类型，因为Student继承自Person，虽然它比Person多了一些属性和方法，

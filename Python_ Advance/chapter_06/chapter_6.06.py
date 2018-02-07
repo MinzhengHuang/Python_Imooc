@@ -6,9 +6,9 @@
 # Rational类实现了有理数运算，但是，如果要把结果转为 int 或 float 怎么办？
 
 # 考察整数和浮点数的转换：
-# >>> int(12.34)
+print int(12.34)
 # 12
-# >>> float(12)
+print float(12)
 # 12.0
 
 # 如果要把 Rational 转为 int，应该使用：
@@ -27,9 +27,9 @@ class Rational(object):
 
 
 # 结果如下：
-# >>> print int(Rational(7, 2))
+print int(Rational(7, 2))
 # 3
-# >>> print int(Rational(1, 3))
+print int(Rational(1, 3))
 # 0
 
 # 同理，要让float()函数正常工作，只需要实现特殊方法__float__()。

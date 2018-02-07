@@ -5,10 +5,10 @@
 
 # 在Python中，函数其实是一个对象：
 
-# >>> f = abs
-# >>> f.__name__
+f = abs
+print f.__name__
 # 'abs'
-# >>> f(-123)
+print f(-123)
 # 123
 
 # 由于 f 可以被调用，所以，f 被称为可调用对象。
@@ -30,8 +30,8 @@ class Person(object):
 
 
 # 现在可以对 Person 实例直接调用：
-# >>> p = Person('Bob', 'male')
-# >>> p('Tim')
+p = Person('Bob', 'male')
+print p('Tim')
 # My name is Bob...
 # My friend is Tim...
 

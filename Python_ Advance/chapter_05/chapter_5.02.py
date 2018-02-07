@@ -4,16 +4,16 @@
 # python中继承一个类
 
 # 如果已经定义了Person类，需要定义新的Student和Teacher类时，可以直接从Person类继承：
-# class Person(object):
-#     def __init__(self, name, gender):
-#         self.name = name
-#         self.gender = gender
+class Person(object):
+    def __init__(self, name, gender):
+        self.name = name
+        self.gender = gender
 
 # 定义Student类时，只需要把额外的属性加上，例如score：
-# class Student(Person):
-#     def __init__(self, name, gender, score):
-#         super(Student, self).__init__(name, gender)
-#         self.score = score
+class Student(Person):
+    def __init__(self, name, gender, score):
+        super(Student, self).__init__(name, gender)
+        self.score = score
 
 # 一定要用 super(Student, self).__init__(name, gender) 去初始化父类，否则，继承自 Person 的 Student 将没有 name 和 gender。
 

@@ -15,12 +15,12 @@ class Person(object):
 
 
 # 现在，在交互式命令行下用 print 试试：
-# >>> p = Person('Bob', 'male')
-# >>> print p
+p = Person('Bob', 'male')
+print p
 # (Person: Bob, male)
 
 # 但是，如果直接敲变量 p：
-# >>> p
+print p
 # <main.Person object at 0x10c941890>
 
 # 似乎__str__() 不会被调用。
