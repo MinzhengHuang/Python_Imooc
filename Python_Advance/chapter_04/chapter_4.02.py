@@ -11,8 +11,8 @@ class Person(object):
 # 现在我们只需要简单地从object类继承。
 
 # 有了Person类的定义，就可以创建出具体的xiaoming、xiaohong等实例。创建实例使用 类名+()，类似函数调用的形式创建：
-xiaoming = Person()
-xiaohong = Person()
+# xiaoming = Person()
+# xiaohong = Person()
 
 
 # 任务
