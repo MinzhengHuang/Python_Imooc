@@ -3,8 +3,8 @@ from django.http import HttpResponse
 from . import models
 
 
-# def hello(request):
-#     return HttpResponse("Hello, Hmz!")
+def hello(request):
+    return HttpResponse("Hello, Hmz!")
 
 # def index(request):
 #     return render(request, 'blog/index.html', {'hello': 'hello,hmz blog haha'})
