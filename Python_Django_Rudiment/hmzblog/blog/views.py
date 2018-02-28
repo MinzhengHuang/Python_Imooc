@@ -15,10 +15,10 @@ def hello(request):
 
 
 def index(request):
-    articles = models.Artical.objects.all()
-    return render(request, 'blog/index.html', {'articles': articles})
+    arts = models.Artical.objects.all()
+    return render(request, 'blog/index.html', {'articles': arts})
 
 
 def article_page(request, article_id):
-    article = models.Artical.objects.get(pk=article_id)
-    return render(request, 'blog/article_page.html', {'article': article})
+    art = models.Artical.objects.get(pk=article_id)
+    return render(request, 'blog/article_page.html', {'article': art})
